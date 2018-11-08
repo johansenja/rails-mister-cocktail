@@ -1,9 +1,9 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Ubuntu');
 
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$body-font: 'Ubuntu', sans-serif;
+$headers-font: 'Dancing Script', cursive;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -14,3 +14,6 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+h1 {
+  font-size: 120px !important;
+}
