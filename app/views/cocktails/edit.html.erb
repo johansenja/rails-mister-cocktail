@@ -1,12 +1,4 @@
 <h1>Edit <%= @cocktail.name %></h1>
-<%= simple_form_for @cocktail do |f| %>
-<%= f.input :name %>
-<%= f.input :method %>
-<%= f.input :ingredients, as: :select2, collection: @ingredients, multiple: true %>
-<%= f.input :doses, collection: @doses %>
-<%= f.input :photo %>
-<%= f.input :photo_cache, as: :hidden %>
-<%= f.submit %>
-<% end %>
+<%= render 'form', cocktail: @cocktail, ingredients: @ingredients, doses: @doses %>
 
 <%= link_to "Back", cocktail_path(@cocktail) %>
