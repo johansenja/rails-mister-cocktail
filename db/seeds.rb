@@ -16,13 +16,13 @@ ingredients_json["drinks"].each do |hash| # array of hashes
   ingredients << ingredient
 end
 
-cocktails = []
-25.times do
-  quant = (3..5).to_a
-  doses = []
-  quant.sample.times do
-    doses << Dose.new(ingredient: ingredients.sample, description: Faker::Measurement.volume)
-  end
-  cocktail = Cocktail.create(method: Faker::Lorem.paragraphs, name: Faker::Superhero.name, doses: doses)
-  cocktails << cocktail
-end
+# cocktails = []
+# 25.times do
+#   quant = (3..5).to_a
+#   doses = []
+#   quant.sample.times do
+#     doses << Dose.new(ingredient: ingredients.sample, description: Faker::Measurement.volume)
+#   end
+#   cocktail = Cocktail.create(method: Faker::Lorem.paragraphs, name: Faker::Superhero.name, doses: doses)
+#   cocktails << cocktail
+# end
