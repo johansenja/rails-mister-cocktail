@@ -2,7 +2,9 @@
 <%= simple_form_for @cocktail do |f| %>
 <%= f.input :name %>
 <%= f.input :method %>
-<%= f.input :ingredients, collection: @ingredients %>
+<%= f.input :ingredients, as: :select2, collection: @ingredients, multiple: true %>
 <%= f.input :doses, collection: @doses %>
 <%= f.submit %>
 <% end %>
+
+<%= link_to "Back", cocktail_path(@cocktail) %>

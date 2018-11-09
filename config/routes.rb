@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
-  resources :cocktails
+  get 'ingredients/index'
+  root to: 'cocktails#index'
+  resources :cocktails, except: [:index]
+  resources :ingredients, only: [:index, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,8 +1,3 @@
 <h1>Submit a new Cocktail</h1>
-<%= simple_form_for @cocktail do |f| %>
-<%= f.input :name %>
-<%= f.input :method %>
-<%= f.input :ingredients, collection: @ingredients %>
-<%= f.input :doses, collection: @doses %>
-<%= f.submit %>
-<% end %>
+<%= render 'form', cocktail: @cocktail, ingredients: @ingredients, doses: @doses %>
+<%= link_to "Back", root_path %>

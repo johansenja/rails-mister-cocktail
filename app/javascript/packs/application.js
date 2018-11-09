@@ -9,5 +9,8 @@
 
 import 'bootstrap';
 import { changeNavbar } from './components/navbar';
+import { smoothScroll, typed } from './components/banner'
+import './components/select2';
 
+smoothScroll();
 changeNavbar();

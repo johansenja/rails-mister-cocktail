@@ -1,0 +1,17 @@
+<div id="ingredients-index">
+  <h2>Looking for a cocktail with specific ingredients?</h1>
+  <div class="cards">
+    <div class="row">
+      <% @ingredients.each do |ingredient| %>
+        <%= link_to ingredient_path(ingredient) do %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('https://loremflickr.com/320/240/<%= ingredient.name %>');">
+            <%= ingredient.name %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

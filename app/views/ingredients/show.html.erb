@@ -1,0 +1,15 @@
+<h1><%= @ingredient.name %></h1>
+<% if @dose %>
+  <%= link_to cocktail_path(@dose.cocktail) do %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('https://loremflickr.com/320/240/<%= @dose.cocktail.name %>');">
+        <%= @dose.cocktail.name %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <h2>Sorry, we don't have any cocktails with <%= @ingredient.name %> yet. Why not add one?</h2>
+  <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-success " %>
+  <%= link_to "Back", ingredients_path %>
+<% end %>
+

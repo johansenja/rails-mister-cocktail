@@ -1,0 +1,7 @@
+<%= simple_form_for cocktail do |f| %>
+<%= f.input :name %>
+<%= f.input :method %>
+<%= f.input :ingredients, collection: ingredients, input_html: { class: "select2", multiple: "multiple" } %>
+<%= f.input :doses, collection: doses, input_html: { class: "select2", multiple: "multiple" } %>
+<%= f.submit %>
+<% end %>
