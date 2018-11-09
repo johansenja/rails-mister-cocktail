@@ -12,7 +12,9 @@
     <h1 style="color: #E67E22 !important; text-shadow: none;"><%= @ingredient.name %></h1>
     <h2 style="color: #E67E22 !important; text-shadow: none;">Sorry, we don't have any cocktails with <%= @ingredient.name %> yet. Why not add one?</h2>
     <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-success " %>
-    <%= link_to "Back", ingredients_path %>
+    <%= link_to ingredients_path, class: "btn btn-space" do %>
+      <i class="fas fa-undo arrow-back"></i>
+    <% end %>
   <% end %>
 </div>
 

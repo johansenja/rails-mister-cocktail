@@ -8,8 +8,14 @@
 <% @doses.each do |dose| %>
   <p><%= "#{dose.description} #{dose.ingredient.name}" %></p>
 <% end %>
-    <%= link_to "Edit this cocktail", edit_cocktail_path, class: "btn btn-info btn-space"%>
-    <%= link_to "Delete this cocktail", cocktail_path(@cocktail), method: :delete, class: "btn btn-danger btn-space" %>
-    <%= link_to "Back", root_path, class: "btn btn-success btn-space" %>
+    <%= link_to root_path, class: "btn btn-space" do %>
+      <i class="fas fa-undo arrow-back"></i>
+    <% end %>
+    <%= link_to edit_cocktail_path, class: "btn-space" do%>
+      <i class="fas fa-pencil-alt pencil-edit"></i>
+    <% end %>
+    <%= link_to cocktail_path(@cocktail), method: :delete, class: "btn btn-space" do %>
+      <i class="fas fa-trash-alt trash-delete"></i>
+    <% end %>
     </div>
 
