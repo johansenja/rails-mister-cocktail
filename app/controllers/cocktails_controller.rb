@@ -14,7 +14,6 @@ class CocktailsController < ApplicationController
       @ingredients << ingredient
       @ingredients.sort!
     end
-
     @doses = []
     Dose.all.each do |dose|
       @doses << dose.description
@@ -28,8 +27,12 @@ class CocktailsController < ApplicationController
   end
 
   def create
-    @cocktail = Cocktail.create(cocktail_params)
-    redirect_to cocktails_path
+    @cocktail = Cocktail.new(cocktail_params)
+    if @cocktail.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def new
@@ -49,7 +52,7 @@ class CocktailsController < ApplicationController
 
   def destroy
     @cocktail.destroy
-    redirect_to cocktails_path
+    redirect_to root_path
   end
 
   private
@@ -59,6 +62,6 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :method, :photo)
+    params.require(:cocktail).permit(:name, :method, :image)
   end
 end
